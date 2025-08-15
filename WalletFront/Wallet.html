@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETH钱包</title>
+    <link rel="stylesheet" href="Wallet.css">
+</head>
+<body>
+    <div class="header">
+        <h1>ETH钱包</h1>
+        <button id="connectWallet">连接钱包</button>
+    </div>
+    <div class="main-content">
+        <button id="transfer">转账</button>
+        <button id="checkBalance">余额查询</button>
+    </div>
+    <script>
+        document.getElementById('checkBalance').addEventListener('click', function() {
+            window.location.href = 'checkBalance.html';
+        });
+
+        document.getElementById('connectWallet').addEventListener('click', async () => {
+            if (window.ethereum) {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    document.getElementById('connectWallet').textContent = '已连接: ' + accounts[0].substring(0, 6) + '...' + accounts[0].substring(accounts[0].length - 4);
+                    alert('钱包已连接！');
+                } catch (error) {
+                    console.error('连接 MetaMask 失败:', error);
+                    alert('连接钱包失败！请检查 MetaMask 或刷新页面。');
+                }
+            } else {
+                alert('请安装 MetaMask 钱包！');
+            }
+        });
+    </script>
+</body>
+</html>

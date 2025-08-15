@@ -1,0 +1,71 @@
+:root {
+    --dark-gold: #B8860B; /* Dark Goldenrod */
+    --light-gold: #DAA520; /* Goldenrod */
+    --very-dark-gold: #8B7355; /* Darker tone for backgrounds */
+    --text-color: #F5DEB3; /* Wheat for light text on dark background */
+    --button-hover: #CDAD00; /* Darker gold for hover effect */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; /* Sharper font including Chinese fonts */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Adjust to flex-start to allow header to position */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #22201d 0%, #1a1815 100%); /* Even darker gradient */
+    color: var(--text-color); /* Use light gold for text */
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    border-radius: 10px; /* Soften the body edges */
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Change to column to center h1 and button */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center horizontally */
+    margin-bottom: 50px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 600px; /* Limit width for better aesthetics */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background for content */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow for main content */
+    display: flex;
+    justify-content: center; /* Change to center to horizontally center the buttons */
+    align-items: center;
+    gap: 20px; /* Add some space between the buttons */
+}
+
+h1 {
+    color: var(--light-gold); /* Use light gold for the heading */
+    margin: 0;
+    font-size: 3em; /* Make font significantly larger */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+button {
+    background-color: var(--dark-gold);
+    color: white;
+    padding: 30px 40px; /* Adjust padding for a more square-like shape and larger size */
+    border: 1px solid var(--light-gold);
+    border-radius: 15px; /* Increase border-radius for a softer, more substantial look */
+    cursor: pointer;
+    font-size: 24px; /* Significantly larger font size for grandeur */
+    font-weight: bold;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow for a more pronounced effect */
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-3px); /* Slightly more pronounced lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Even deeper shadow on hover */
+}
